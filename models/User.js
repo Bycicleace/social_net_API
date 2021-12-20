@@ -14,7 +14,7 @@ const UserSchema = new Schema (
             unique: true,
             validate: {
                 validator: function(v) {
-                    return '/^[\w\.-]+@[\w\.-]+\.[\w]{2,}$/'.test(v);
+                    return /^[\w\.-]+@[\w\.-]+\.[\w]{2,}$/.test(v);
                 },
                 message: props => `${props.value} is an invalid Email Address!`
             }
@@ -31,7 +31,7 @@ const UserSchema = new Schema (
 )
 
 UserSchema.virtual('friendCount').get(function() {
-    return this.friends.length();
+    return this.friends.length;
 });
 
 const User = model('User', UserSchema);
