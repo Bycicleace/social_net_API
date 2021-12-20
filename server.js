@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(require('./routes/index.js'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhose:27017/social-network');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social-network');
 
 mongoose.set('debug', true);
 
