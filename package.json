@@ -1,0 +1,27 @@
+{
+  "name": "social_net_api",
+  "version": "1.0.0",
+  "description": "Social Networking API Setup",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bycicleace/social_net_API.git"
+  },
+  "author": "Elliott Kvamme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bycicleace/social_net_API/issues"
+  },
+  "homepage": "https://github.com/Bycicleace/social_net_API#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
