@@ -1,11 +1,6 @@
 const router = require('express').Router();
+const userRoutes = require('./user-routes.js');
 
-router
-    .route('/users')
-    .get()      // All Users
-    .get()      // Single User
-    .post()     // New User
-    .put()      // Update User
-    .delete()   // Delete User
+router.use('/users', userRoutes);
 
 module.exports = router;
