@@ -2,10 +2,22 @@ const { Schema, model } = require('mongoose');
 
 const thoughtSchema = new Schema(
     {
-        thoughtText: {},
-        createdAt: {},
-        username: {},
-        reactions: [],
+        thoughtText: {
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 280
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now(),
+            // getter method here
+        },
+        username: {
+            type: String,
+            required: true,
+        },
+        reactions: [] // Will be collection of reaction documents
     },
     {
         toJSON: {
