@@ -20,7 +20,7 @@ router
 
 router
     .route('/:thoughtId/reactions')
-    .post(addReaction)
+    .put(addReaction)
 
 router
     .route('/:thoughtId/reactions/:reactionId')

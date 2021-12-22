@@ -104,7 +104,7 @@ const thoughtController = {
             { $push: { reactions: body } },
             { new: true }
         )
-            then(dbThoughtData => {
+            .then(dbThoughtData => {
                 if (!dbThoughtData) {
                     res.status(404).json({ message: "Thought not found" });
                     return;
