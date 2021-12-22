@@ -17,6 +17,10 @@ const thoughtSchema = new Schema(
             type: String,
             required: true
         },
+        userId: {
+            type: String,
+            required: true
+        },
         reactions: [] // Will be collection of reaction documents
     },
     {

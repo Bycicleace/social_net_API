@@ -19,12 +19,7 @@ const UserSchema = new Schema (
                 message: props => `${props.value} is an invalid Email Address!`
             }
         },
-        thoughts: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Thought'
-            }
-        ],
+        thoughts: [],
         friends: [],
     },
     {
