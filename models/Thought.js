@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const formatDate = require('../utils/dateFormat.js');
 
 const thoughtSchema = new Schema(
     {
@@ -10,8 +11,8 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now(),
-            // getter method here
+            default: Date.now,
+            get: createdAtVal => formatDate(createdAtVal)
         },
         username: {
             type: String,
@@ -25,7 +26,8 @@ const thoughtSchema = new Schema(
     },
     {
         toJSON: {
-            virtuals: true
+            virtuals: true,
+            getters: true
         },
         id: false
     }
