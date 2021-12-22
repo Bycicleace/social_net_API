@@ -76,9 +76,8 @@ const thoughtController = {
                 if (!deletedThought) {
                     return res.status(404).json({ message: "Thought not found" });
                 }
-                // console.log(User.findOne({ _id: deletedThought.userId }).thoughts);
-                User.findOne({ _id: deletedThought.userId })
-                    .then(result => console.log(result, result.thoughts));
+                // User.findOne({ _id: deletedThought.userId })
+                //     .then(result => console.log(result, result.thoughts));
                 return User.findOneAndUpdate(
                     { _id: deletedThought.userId },
                     { $pull: { thoughts: params.id } },
