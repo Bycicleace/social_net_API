@@ -35,7 +35,7 @@ const thoughtController = {
             .then(({ _id, userId }) => {
                 return User.findOneAndUpdate(
                     { _id: userId },
-                    { $push: { thoughts: _id } },
+                    { $push: { thoughts: String(_id) } },
                     { new: true }
                 );
             })
@@ -77,6 +77,8 @@ const thoughtController = {
                     return res.status(404).json({ message: "Thought not found" });
                 }
                 // console.log(User.findOne({ _id: deletedThought.userId }).thoughts);
+                User.findOne({ _id: deletedThought.userId })
+                    .then(result => console.log(result, result.thoughts));
                 return User.findOneAndUpdate(
                     { _id: deletedThought.userId },
                     { $pull: { thoughts: params.id } },
