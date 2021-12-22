@@ -1,4 +1,4 @@
-const { User } = require('../models/index.js');
+const { User, Thought } = require('../models/index.js');
 
 const userController = {
     // Get all Users
@@ -61,6 +61,21 @@ const userController = {
                     return;
                 }
                 res.json(dbUserData);
+                Thought.find()
+                    .where('userId').equals(params.id)
+                    .then(dbThoughtsData => {
+                        console.log(dbThoughtsData);
+                        if (dbThoughtsData.length >= 1) {
+                            dbThoughtsData.forEach(element => {
+                                Thought.findOneAndDelete({ _id: element._id })
+                                    .then(deletedThought => {
+                                        console.log(`Deleted Thought:\n${deletedThought}\n`);
+                                    })
+                            });
+                        } else {
+                            console.log('No corresponding thoughts found')
+                        }
+                    })
             })
             .catch(err => {
                 console.log(err);

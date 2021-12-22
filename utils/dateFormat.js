@@ -14,7 +14,7 @@ function formatDate(input) {
         'Nov',
         'Dec'
     ];
-    const [month, day, year, hours, seconds] = [currentDate.getMonth(), currentDate.getDate(), currentDate.getFullYear(), currentDate.getHours(), currentDate.getSeconds()];
+    let [month, day, year, hours, seconds] = [currentDate.getMonth(), currentDate.getDate(), currentDate.getFullYear(), currentDate.getHours(), currentDate.getSeconds()];
     let ampm = 'AM';
     if (hours > 12) {
         hours -= 12;
