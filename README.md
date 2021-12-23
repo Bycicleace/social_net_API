@@ -5,6 +5,8 @@ This is a back end API for a social networking platform. In this case, we are fo
 
 There is no front-end website for this repository. This is strictly back-end. In order to manipulate the database, you'll need to use a program like Insomnia or Postman or you could use Node, or develop a front end to work with it.
 
+For a video walkthrough of installing and using the API, please see this [YouTube video](https://youtu.be/zppbD8Y3bKI)
+
 ## Installation Instructions
 1. Install a MongoDB instance on your computer or server.
 2. Clone the repository into a folder location
